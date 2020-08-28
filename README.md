@@ -1,4 +1,4 @@
-# rolvs-password-checker
+# password-checker
  Checks if given password has been made public before using the pwned checker api, and if it has, displays how many times.
 
 Unfortunately, to check emails which have been leaked, an api key is required. If you wish to just check a personal email, however,
