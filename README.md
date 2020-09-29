@@ -12,7 +12,8 @@
 2. Clone the repository by opening your command line/terminal and run: ```git clone https://github.com/Rolv-Apneseth/password-checker.git```
     * Note: if you don't have git, it can be downloaded from [here](https://git-scm.com/downloads).
 3. Install the requirements for the program.
-    * In your terminal, navigate to the cloned directory and run: ```python3 -m pip install -r requirements.txt```
+    * In your terminal, navigate to the cloned directory and run: 
+    ```python3 -m pip install -r requirements.txt```
 4. To run the actual program, navigate further into the password-checker folder and from that directory run: ```python3 main.py```
 
 ## Usage
