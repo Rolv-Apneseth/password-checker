@@ -6,6 +6,10 @@ import pass_check_script
 
 
 def pass_check(password):
+    """
+    Calls api_check from pass_check_script.py and changes
+    gui elements as the process is carried out.
+    """
     if password == "":
         console["text"] = "Please enter a password first"
         return None
