@@ -15,14 +15,15 @@ def api_request(hash_password):
 
     if re.status_code != 200:
         raise RuntimeError(
-            f"Error fetching: {re.status_code}, check the api and try again.")
+            f"Error fetching: {re.status_code}, check the api and try again."
+        )
 
     return re
 
 
 def get_count(hashes, hash_to_check):
     """
-    Counts encoded tail ends of passwords which match given tail end 
+    Counts encoded tail ends of passwords which match given tail end
     of password being checked.
     """
 
@@ -57,6 +58,7 @@ if __name__ == "__main__":
         count = api_check(password)
         if count:
             print(
-                f"\n{password} was found {count} times... you should probably change your password")
+                f"\n{password} was found {count} times... you should probably change your password"
+            )
         else:
             print(f"\n{password} was not found. Carry on.")
