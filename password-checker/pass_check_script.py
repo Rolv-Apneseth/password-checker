@@ -58,7 +58,8 @@ if __name__ == "__main__":
         count = api_check(password)
         if count:
             print(
-                f"\n{password} was found {count} times... you should probably change your password"
+                f"\n{password} was found {count} times... you "
+                "should probably change your password"
             )
         else:
             print(f"\n{password} was not found. Carry on.")
