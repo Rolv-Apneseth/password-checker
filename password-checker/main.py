@@ -7,22 +7,23 @@ import pass_check_script
 
 def pass_check(password):
     """
-    Calls api_check from pass_check_script.py and changes
-    gui elements as the process is carried out.
+    Calls api_check from pass_check_script.py and changes gui elements as
+    the process is carried out.
     """
+
+    # Return if no password was given
     if password == "":
         console["text"] = "Please enter a password first"
-        return None
+        return
 
+    # Clear entry element
     entry.delete(0, "end")
-
-    console["text"] = f"Checking if {password} has been pwned..."
 
     count = pass_check_script.api_check(password)
     if count:
         console["text"] = (
-            "Check complete\n\nThe password was found:"
-            f"{str(count)} times\n\nA new password is recommended"
+            f"Check complete\n\nThe password was found: {str(count)} times"
+            "\n\nA new password is recommended"
         )
     else:
         console["text"] = (
@@ -31,7 +32,7 @@ def pass_check(password):
         )
 
 
-# start of gui
+# GUI
 root = tk.Tk()
 
 # Set icon and title for window
@@ -47,7 +48,7 @@ root.title("Pwned Password Checker")
 canvas = tk.Canvas(root, height=400, width=400)
 canvas.pack()
 
-# background
+# Background
 bg_label = tk.Label(root, bg="black")
 bg_label.place(relwidth=1, relheight=1)
 
@@ -71,12 +72,11 @@ title_label = tk.Label(
 )
 title_label.place(relwidth=0.99, relheight=0.9, relx=0.005, rely=0.05)
 
-# entry label
-entry = ttk.Entry(frame2, background="gray",
-                  font=("Times", 14), justify="center")
+# Entry label
+entry = ttk.Entry(frame2, background="gray", font=("Times", 14), justify="center")
 entry.place(relwidth=0.6, relheight=0.9, relx=0.005, rely=0.05)
 
-# entry button
+# Entry button
 password_submit = ttk.Button(
     frame2,
     text="Check password",
@@ -91,10 +91,10 @@ console = ttk.Label(
     background="black",
     foreground="yellow",
     text=(
-        "The program is ready for use.\n\nPlease enter a password above"
-        "and\nclick the 'Check password' button to check\nif your password"
+        "The program is ready for use.\n\nPlease enter a password above "
+        "and\nclick the 'Check password' button to check\nif your password "
         "has been pwned.\n\nDon't worry, as only a small, encrypted\n"
-        "fragmentof your password is sent over\nthe web, so your password"
+        "fragmentof your password is sent over\nthe web, so your password "
         "is secure."
     ),
     justify="left",
