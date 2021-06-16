@@ -5,6 +5,16 @@ from tkinter import ttk
 import pass_check_script
 
 
+# COLOURS
+BG_PRIMARY = "#1F1B24"
+BG_SECONDARY = "#373040"
+FG = "#cccccc"
+
+# FONTS
+CONSOLE_FONT = ("Helvetica", 14)
+TITLE_FONT = ("Helvetica", 18, "bold")
+
+
 def pass_check(password):
     """
     Calls api_check from pass_check_script.py and changes gui elements as
@@ -49,7 +59,7 @@ canvas = tk.Canvas(root, height=400, width=400)
 canvas.pack()
 
 # Background
-bg_label = tk.Label(root, bg="black")
+bg_label = tk.Label(root, bg=BG_PRIMARY)
 bg_label.place(relwidth=1, relheight=1)
 
 # Making the frames
@@ -66,11 +76,11 @@ frame3.place(relwidth=0.9, relheight=0.5, relx=0.05, rely=0.45)
 title_label = tk.Label(
     title_frame,
     text="Pwned Password Checker",
-    font=("Helvetica", 14, "underline", "bold"),
-    bg="Black",
-    fg="yellow",
+    font=TITLE_FONT,
+    bg=BG_SECONDARY,
+    fg=FG,
 )
-title_label.place(relwidth=0.99, relheight=0.9, relx=0.005, rely=0.05)
+title_label.place(relwidth=1, relheight=1, relx=0, rely=0)
 
 # Entry label
 entry = ttk.Entry(frame2, background="gray", font=("Times", 14), justify="center")
@@ -88,8 +98,8 @@ password_submit.place(relwidth=0.385, relheight=0.9, relx=0.61, rely=0.05)
 # Console
 console = ttk.Label(
     frame3,
-    background="black",
-    foreground="yellow",
+    background=BG_SECONDARY,
+    foreground=FG,
     text=(
         "The program is ready for use.\n\nPlease enter a password above "
         "and\nclick the 'Check password' button to check\nif your password "
@@ -98,10 +108,10 @@ console = ttk.Label(
         "is secure."
     ),
     justify="left",
-    font=("Helvetica", 14),
+    font=CONSOLE_FONT,
     pad=10,
     anchor="nw",
 )
-console.place(relwidth=0.99, relheight=0.99, relx=0.005, rely=0.005)
+console.place(relwidth=1, relheight=1, relx=0, rely=0)
 
 root.mainloop()
