@@ -2,6 +2,10 @@
 
 Checks if given password has been made public before by using the pwned checker api, and if it has, displays how many times.
 
+## Demo
+
+[![Video demo of Speed Typer](http://img.youtube.com/vi/7GlcYeDO-2E/0.jpg)](http://www.youtube.com/watch?v=7GlcYeDO-2E "Portfolio Project - Password Checker")
+
 ## What I learned
 
 - Building GUI's using tkinter
